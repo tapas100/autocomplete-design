@@ -1,0 +1,22 @@
+<div class="container-style">
+  <form [formGroup]="stateForm" class="text-center form-style">
+    <mat-form-field appearance="outline" class="w-50">
+      <span matPrefix>
+        <mat-icon class="prefix-icon">search</mat-icon>
+      </span>
+      <input type="text" matInput placeholder="Search for something..." formControlName="stateGroup" [matAutocomplete]="autoGroup">
+      <mat-autocomplete #autoGroup="matAutocomplete">
+        <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.category">
+          <mat-option *ngIf="group.items.length == 0" disabled>
+            <div class="text-center">No <span class="category-style">{{group.category}}</span> found</div>
+          </mat-option>
+          <mat-option *ngFor="let item of group.items" [value]="name">
+            <img class="option-img" aria-hidden [src]="item?.img" height="25">
+            <span [innerHTML]="item.name | highlight: highlight_string"></span>
+            <span class="float-right item-location">{{item.location}}</span>
+          </mat-option>
+        </mat-optgroup>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+</div>

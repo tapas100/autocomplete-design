@@ -6,8 +6,6 @@
   }
 }
 
-
-
 .option-img {
   vertical-align: middle;
   margin-right: 15px;
@@ -15,11 +13,11 @@
   height: 30px;
   width: 30px;
 }
-.category-style{
+.category-style {
   text-transform: lowercase;
 }
 
-.item-location{
+.item-location {
   font-size: 13px;
   color: #bfbfbf;
 }
@@ -32,11 +30,11 @@
 ::ng-deep .mat-autocomplete-panel {
   margin-top: 40px;
   max-height: 315px !important;
-  .mat-optgroup-label{
+  .mat-optgroup-label {
     background-color: #f1f1f1;
   }
-  .mat-option-text{
-    b{
+  .mat-option-text {
+    b {
       color: rgb(0, 183, 255);
     }
   }
@@ -69,5 +67,11 @@
   .mat-form-field-appearance-outline .mat-form-field-label {
     top: 1.2em;
     margin-top: -0.25em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .custom-style{
+      width: 100% !important;
   }
 }
